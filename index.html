@@ -709,14 +709,16 @@
             .hero h1 { font-size: 2.8rem; line-height: 1.2; }
             
             .typewriter {
-                font-size: 1rem;
+                font-size: 1.1rem;
                 white-space: normal;
                 border-right: none;
                 animation: none;
                 text-align: center;
                 width: 100%;
+                overflow: visible;
+                display: block;
             }
-            .typewriter-container { border-bottom: 2px solid var(--gold-metal); padding-bottom: 5px; height: auto; }
+            .typewriter-container { border-bottom: none; padding-bottom: 0; height: auto; margin-bottom: 30px; }
 
             .profile-img { height: 350px; }
 
@@ -916,6 +918,12 @@
                 </div>
 
             </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <p style="color: var(--beige-text); font-size: 0.9rem; opacity: 0.8;">
+                    * Os preços podem sofrer alterações sem aviso prévio.
+                </p>
+            </div>
         </div>
     </section>
 
@@ -930,7 +938,10 @@
                 <div class="location-box">
                     <i class="fas fa-map-marker-alt" style="font-size: 2.5rem; color: var(--gold-metal); margin-bottom: 15px;"></i>
                     <h3>Studio Edy Beauty</h3>
-                    <p>Um ambiente preparado para o seu conforto e relaxamento.</p>
+                    <p style="margin-bottom: 15px;">Um ambiente preparado para o seu conforto e relaxamento.</p>
+                    <p style="color: var(--gold-light); font-weight: bold; margin-bottom: 25px; font-size: 1.1rem;">
+                        Endereço: [Coloque a rua, número e bairro aqui]
+                    </p>
                     <a href="https://maps.app.goo.gl/W6aKBGLdvm4YC3XHA" target="_blank" class="location-btn"><i class="fas fa-directions"></i> Ver no Mapa</a>
                 </div>
             </div>
