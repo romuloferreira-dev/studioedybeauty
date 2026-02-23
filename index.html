@@ -300,6 +300,7 @@
             max-width: 900px;
             padding: 20px;
             width: 100%; 
+            transition: transform 0.3s ease;
         }
 
         .hero h1 {
@@ -310,19 +311,32 @@
             line-height: 1.1;
         }
 
-        /* Efeito Typewriter */
+        /* Efeito Typewriter Refatorado - MAIS LENTO */
         .typewriter-container {
+            position: relative;
             display: inline-block;
             margin-bottom: 40px;
             max-width: 100%;
-            height: 35px;
+        }
+
+        .typewriter-phantom {
+            visibility: hidden; /* Fica invisível, mas dita a largura exata do container */
+            white-space: nowrap;
+            letter-spacing: .1em;
+            font-size: 1.3rem;
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+            text-transform: uppercase;
         }
 
         .typewriter {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
             overflow: hidden;
             border-right: .15em solid var(--gold-metal);
             white-space: nowrap;
-            margin: 0 auto;
             letter-spacing: .1em;
             font-size: 1.3rem;
             font-family: 'Lato', sans-serif;
@@ -330,7 +344,8 @@
             font-weight: 300;
             text-transform: uppercase;
             width: 0;
-            animation: typing 3s steps(40, end) infinite;
+            /* Tempo alterado de 4s para 7s para ficar mais suave */
+            animation: typing 7s steps(40, end) infinite;
         }
 
         @keyframes typing {
@@ -706,19 +721,22 @@
                 padding: 50px 0;
             }
 
+            .hero-content {
+                transform: translateY(-25px); /* Move o conteúdo levemente para cima para centralizar visualmente */
+            }
+
             .hero h1 { font-size: 2.8rem; line-height: 1.2; }
             
+            /* Ajuste crucial para o Typewriter funcionar no mobile (mantém numa única linha) */
+            .typewriter-phantom,
             .typewriter {
-                font-size: 1.1rem;
-                white-space: normal;
-                border-right: none;
-                animation: none;
-                text-align: center;
-                width: 100%;
-                overflow: visible;
-                display: block;
+                font-size: 3.5vw; 
+                letter-spacing: 0; 
             }
-            .typewriter-container { border-bottom: none; padding-bottom: 0; height: auto; margin-bottom: 30px; }
+            
+            .typewriter-container {
+                margin-bottom: 30px; 
+            }
 
             .profile-img { height: 350px; }
 
@@ -786,6 +804,7 @@
             <h1 class="shimmer-text">Studio Edy Beauty</h1>
             
             <div class="typewriter-container">
+                <div class="typewriter-phantom">Seu momento de auto cuidado começa aqui</div>
                 <div class="typewriter">Seu momento de auto cuidado começa aqui</div>
             </div>
             
@@ -940,7 +959,7 @@
                     <h3>Studio Edy Beauty</h3>
                     <p style="margin-bottom: 15px;">Um ambiente preparado para o seu conforto e relaxamento.</p>
                     <p style="color: var(--gold-light); font-weight: bold; margin-bottom: 25px; font-size: 1.1rem;">
-                        Endereço: Rua Leonel Pereira 715,loja 06, Florianópolis, Santa Catarina
+                        Endereço: [Coloque a rua, número e bairro aqui]
                     </p>
                     <a href="https://maps.app.goo.gl/W6aKBGLdvm4YC3XHA" target="_blank" class="location-btn"><i class="fas fa-directions"></i> Ver no Mapa</a>
                 </div>
@@ -1003,6 +1022,12 @@
     <script async src="https://www.instagram.com/embed.js"></script>
 
     <script>
+        // Garante que o navegador inicie no topo em vez de puxar do cache
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
+
         // Menu Mobile Toggle
         const menuToggle = document.querySelector('.menu-toggle');
         const navLinks = document.querySelector('.nav-links');
@@ -1039,4 +1064,3 @@
     </script>
 </body>
 </html>
-
