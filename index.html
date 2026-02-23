@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Beauty Esthetic - Saúde & Bem Estar. Especialistas em beleza natural.">
-    <title>Beauty Esthetic | Saúde & Bem Estar</title>
+    <meta name="description" content="Studio Edy Beauty. Especialistas em beleza e estética avançada.">
+    <title>Studio Edy Beauty</title>
     
     <!-- Font Awesome para ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -15,20 +15,17 @@
     <style>
         /* --- VARIÁVEIS E CONFIGURAÇÕES GERAIS --- */
         :root {
-            /* Paleta de Cores Solicitada */
-            --rose-light: #E6B7B7;
-            --rose-medium: #D39A9A;
-            --rose-dark: #C47F7F;
-            --rose-gold: #B76E79; /* Referência Rosé Gold */
-            --vinho-claro: #9e5a63;
+            /* Nova Paleta de Cores Solicitada */
+            --bg-deep: #0B0B0B;        /* Preto profundo */
+            --bg-dark: #1A1A1A;        /* Preto / grafite escuro */
+            --gold-metal: #C9A24D;     /* Dourado metálico */
+            --gold-light: #E0C27A;     /* Dourado mais claro / champagne */
+            --beige-text: #EDE6D8;     /* Bege quente suave (texto menor) */
             
-            --white: #ffffff;
-            --off-white: #f9f4f4;
-            --text-dark: #4a4a4a;
-            --text-light: #666666;
+            --whatsapp: #25d366;
+            --whatsapp-hover: #128c7e;
             
-            --gradient-rose: linear-gradient(135deg, var(--rose-gold) 0%, var(--rose-medium) 100%);
-            --shadow: 0 10px 30px rgba(183, 110, 121, 0.2);
+            --shadow: 0 10px 30px rgba(201, 162, 77, 0.15);
             --header-height: 70px;
             --marquee-height: 40px;
         }
@@ -45,16 +42,16 @@
 
         body {
             font-family: 'Lato', sans-serif;
-            color: var(--text-dark);
-            background-color: var(--off-white);
-            overflow-x: hidden; /* Evita rolagem horizontal indesejada */
+            color: var(--beige-text);
+            background-color: var(--bg-deep);
+            overflow-x: hidden;
             line-height: 1.6;
-            padding-top: calc(var(--header-height) + var(--marquee-height)); /* Compensar header fixo + marquee fixo */
+            padding-top: calc(var(--header-height) + var(--marquee-height));
         }
 
         h1, h2, h3, h4 {
             font-family: 'Playfair Display', serif;
-            color: var(--rose-gold);
+            color: var(--gold-metal);
         }
 
         a {
@@ -71,12 +68,12 @@
         .shimmer-text {
             background: linear-gradient(
                 to right,
-                var(--rose-gold) 20%,
-                #fff 50%,
-                var(--rose-gold) 80%
+                var(--gold-metal) 20%,
+                var(--gold-light) 50%,
+                var(--gold-metal) 80%
             );
             background-size: 200% auto;
-            color: transparent; /* Fallback */
+            color: transparent;
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -103,42 +100,42 @@
 
         .btn-gold {
             display: inline-block;
-            background: var(--rose-gold);
-            color: white;
+            background: var(--gold-metal);
+            color: var(--bg-deep);
             padding: 12px 30px;
             border-radius: 50px;
             text-transform: uppercase;
             letter-spacing: 1px;
             font-size: 0.9rem;
             font-weight: 700;
-            box-shadow: 0 5px 15px rgba(183, 110, 121, 0.4);
-            border: 2px solid var(--rose-gold);
+            box-shadow: 0 5px 15px rgba(201, 162, 77, 0.3);
+            border: 2px solid var(--gold-metal);
             cursor: pointer;
         }
 
         .btn-gold:hover {
             background: transparent;
-            color: var(--rose-gold);
+            color: var(--gold-metal);
             transform: translateY(-3px);
         }
 
         .btn-whatsapp-outline {
             display: inline-block;
             background: transparent;
-            color: #25d366;
+            color: var(--whatsapp);
             padding: 10px 25px;
             border-radius: 50px;
             text-transform: uppercase;
             letter-spacing: 1px;
             font-size: 0.85rem;
             font-weight: 700;
-            border: 2px solid #25d366;
+            border: 2px solid var(--whatsapp);
             margin-top: 10px;
         }
         
         .btn-whatsapp-outline:hover {
-            background: #25d366;
-            color: white;
+            background: var(--whatsapp);
+            color: var(--bg-deep);
         }
 
         /* --- HEADER & NAVEGAÇÃO --- */
@@ -147,11 +144,13 @@
             top: 0;
             width: 100%;
             height: var(--header-height);
-            background: rgba(255, 255, 255, 0.98);
+            background: rgba(11, 11, 11, 0.95);
+            backdrop-filter: blur(10px);
             z-index: 1000;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.5);
             display: flex;
             align-items: center;
+            border-bottom: 1px solid rgba(201, 162, 77, 0.2);
         }
 
         .container {
@@ -170,17 +169,10 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 15px; /* Espaço entre imagem e texto */
+            gap: 15px;
             height: 50px;
         }
 
-        .logo img {
-            height: 100%;
-            width: auto;
-            object-fit: contain;
-        }
-
-        /* Container do texto do Header restaurado */
         .logo-text-container {
             display: flex;
             flex-direction: column;
@@ -189,18 +181,10 @@
 
         .logo-text {
             font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-weight: 700;
-            color: var(--rose-gold);
+            color: var(--gold-metal);
             letter-spacing: 1px;
-        }
-
-        .logo-subtitle {
-            font-family: 'Lato', sans-serif;
-            font-size: 0.8rem;
-            color: var(--text-light);
-            text-transform: uppercase;
-            letter-spacing: 2px;
         }
 
         .nav-links {
@@ -214,14 +198,15 @@
         }
 
         .nav-links a {
-            color: var(--text-dark);
+            color: var(--beige-text);
             font-weight: 500;
             font-size: 0.95rem;
             position: relative;
             padding: 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        /* Efeito hover nos links principais */
         .nav-links > li > a::after {
             content: '';
             position: absolute;
@@ -229,88 +214,53 @@
             height: 2px;
             bottom: 0;
             left: 0;
-            background-color: var(--rose-gold);
+            background-color: var(--gold-metal);
             transition: width 0.3s;
         }
 
         .nav-links > li > a:hover::after {
             width: 100%;
         }
-
-        /* --- DROPDOWN MENU --- */
-        .dropdown-menu {
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            background: white;
-            min-width: 200px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border-radius: 8px;
-            padding: 10px 0;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            border-top: 3px solid var(--rose-gold);
-        }
-
-        .nav-links li:hover .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            top: 120%; /* Pequeno gap */
-        }
-
-        .dropdown-menu li a {
-            display: block;
-            padding: 10px 20px;
-            color: var(--text-dark);
-            white-space: nowrap;
-        }
-
-        .dropdown-menu li a:hover {
-            background-color: var(--off-white);
-            color: var(--rose-gold);
-        }
         
-        .dropdown-menu li a::after {
-            display: none; /* Remove underline do dropdown */
+        .nav-links > li > a:hover {
+            color: var(--gold-light);
         }
 
         .menu-toggle {
             display: none;
             font-size: 1.5rem;
-            color: var(--rose-gold);
+            color: var(--gold-metal);
             cursor: pointer;
         }
 
         /* --- MARQUEE FIXO (TOPO) --- */
         .fixed-marquee {
             position: fixed;
-            top: var(--header-height); /* Logo abaixo do header */
+            top: var(--header-height);
             left: 0;
             width: 100%;
             height: var(--marquee-height);
-            background: var(--rose-gold);
-            color: white;
+            background: var(--gold-metal);
+            color: var(--bg-deep);
             z-index: 999;
             display: flex;
             align-items: center;
             overflow: hidden;
             white-space: nowrap;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
         }
 
         .fixed-marquee-content {
             display: inline-block;
-            animation: scroll 40s linear infinite;
+            animation: scroll 30s linear infinite;
         }
 
         .fixed-marquee-item {
             display: inline-block;
             font-size: 0.9rem;
-            margin: 0 20px;
+            margin: 0 15px;
             text-transform: uppercase;
-            font-weight: 600;
+            font-weight: 700;
             letter-spacing: 1px;
         }
 
@@ -319,6 +269,7 @@
             opacity: 0.7;
             vertical-align: middle;
             margin: 0 5px;
+            color: var(--bg-dark);
         }
 
         @keyframes scroll {
@@ -328,9 +279,9 @@
 
         /* --- HERO SECTION (CAPA) --- */
         .hero {
-            height: calc(100vh - var(--header-height) - var(--marquee-height)); /* Ajusta altura para tela cheia */
+            height: calc(100vh - var(--header-height) - var(--marquee-height));
             min-height: 500px;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background: linear-gradient(rgba(11,11,11,0.7), rgba(11,11,11,0.8)), url('https://images.unsplash.com/photo-1600334129128-68505d112651?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -342,30 +293,18 @@
         }
 
         .hero-content {
-            color: white;
+            color: var(--beige-text);
             max-width: 900px;
             padding: 20px;
             width: 100%; 
         }
 
         .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 0px; /* Reduzido para aproximar do subtítulo */
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-size: 4.5rem;
+            margin-bottom: 10px;
+            color: var(--gold-metal);
+            text-shadow: 2px 2px 15px rgba(0,0,0,0.8);
             line-height: 1.1;
-        }
-
-        .hero-subtitle-main {
-            font-family: 'Lato', sans-serif;
-            font-size: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: var(--rose-light);
-            margin-top: 5px; /* Ajuste fino */
-            margin-bottom: 20px;
-            font-weight: 300;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
 
         /* Efeito Typewriter */
@@ -378,14 +317,17 @@
 
         .typewriter {
             overflow: hidden;
-            border-right: .15em solid var(--rose-gold);
+            border-right: .15em solid var(--gold-metal);
             white-space: nowrap;
             margin: 0 auto;
-            letter-spacing: .15em;
-            font-size: 1.5rem;
-            font-family: 'Playfair Display', serif;
+            letter-spacing: .1em;
+            font-size: 1.3rem;
+            font-family: 'Lato', sans-serif;
+            color: var(--gold-light);
+            font-weight: 300;
+            text-transform: uppercase;
             width: 0;
-            animation: typing 3s steps(30, end) infinite;
+            animation: typing 3s steps(40, end) infinite;
         }
 
         @keyframes typing {
@@ -396,61 +338,14 @@
         }
 
         /* --- SEÇÕES GERAIS --- */
-        .news-section, .professional-wrapper, .locations-section, .instagram-section {
+        .professional-wrapper, .pricing-section, .locations-section, .instagram-section {
             padding: 80px 0;
         }
 
-        .news-section { background: white; }
-        
-        /* Card Novidade */
-        .news-container {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 40px;
-            background: linear-gradient(135deg, #fff5f5 0%, #fff 100%);
-            padding: 40px;
-            border-radius: 20px;
-            border: 1px solid var(--rose-light);
-            box-shadow: var(--shadow);
+        /* --- CARDS PROFISSIONAIS (EDI) --- */
+        .professional-wrapper { 
+            background-color: var(--bg-deep); 
         }
-
-        .news-image {
-            flex: 1;
-            min-width: 300px;
-        }
-        .news-image img {
-            width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            object-fit: cover;
-        }
-        .news-content { flex: 1; min-width: 300px; }
-
-        .badge {
-            background: var(--rose-gold);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
-            display: inline-block;
-        }
-
-        .features-list { margin: 20px 0; }
-        .features-list li {
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            color: var(--text-dark);
-        }
-        .features-list li i { color: var(--rose-gold); margin-right: 10px; }
-
-        /* --- CARDS PROFISSIONAIS --- */
-        .professional-wrapper { border-bottom: 1px solid #eee; }
-        .professional-wrapper:last-of-type { border-bottom: none; }
 
         .profile-card {
             display: flex;
@@ -458,6 +353,11 @@
             gap: 50px;
             align-items: center;
             margin-bottom: 50px;
+            background: var(--bg-dark);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(201, 162, 77, 0.2);
+            box-shadow: var(--shadow);
         }
 
         .profile-img-container {
@@ -465,14 +365,16 @@
             min-width: 300px;
             position: relative;
         }
+        
         .profile-img-container::before {
             content: '';
             position: absolute;
-            top: -20px;
-            left: -20px;
+            top: -15px;
+            left: -15px;
             width: 100%;
             height: 100%;
-            border: 2px solid var(--rose-gold);
+            border: 2px solid var(--gold-metal);
+            border-radius: 10px;
             z-index: 0;
         }
         
@@ -480,85 +382,140 @@
             width: 100%;
             height: 500px;
             object-fit: cover;
-            object-position: top; /* Ajuste adicionado para não cortar a cabeça */
-            border-radius: 5px;
+            object-position: top;
+            border-radius: 10px;
             position: relative;
             z-index: 1;
-            box-shadow: var(--shadow);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
         }
         
         .profile-info { flex: 1.2; min-width: 300px; }
-        .profile-info h2 { font-size: 2.8rem; margin-bottom: 5px; }
+        .profile-info h2 { font-size: 3rem; margin-bottom: 5px; }
         .profile-info h3 {
             font-family: 'Lato', sans-serif;
-            font-weight: 300;
-            color: var(--rose-dark);
+            font-weight: 400;
+            color: var(--gold-light);
             margin-bottom: 25px;
             text-transform: uppercase;
             letter-spacing: 2px;
             font-size: 1rem;
         }
-        .bio-text { color: var(--text-light); margin-bottom: 30px; text-align: justify; }
+        .bio-text { color: var(--beige-text); margin-bottom: 30px; text-align: justify; }
         .social-buttons { display: flex; gap: 15px; flex-wrap: wrap; }
 
-        /* --- PROCEDIMENTOS GRID --- */
-        .procedures-subsection { margin-top: 40px; }
-        .section-subtitle {
+        /* --- TABELA DE PREÇOS --- */
+        .pricing-section {
+            background-color: var(--bg-dark);
+            border-top: 1px solid rgba(201, 162, 77, 0.1);
+            border-bottom: 1px solid rgba(201, 162, 77, 0.1);
+        }
+
+        .section-title {
             text-align: center;
-            font-size: 2rem;
-            margin-bottom: 40px;
-            position: relative;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
         }
-        .section-subtitle::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 3px;
-            background: var(--rose-gold);
-            margin: 15px auto 0;
+
+        .section-subtitle-center {
+            text-align: center;
+            color: var(--beige-text);
+            margin-bottom: 50px;
+            font-weight: 300;
+            letter-spacing: 1px;
         }
-        
-        /* GRID PADRÃO (Desktop/Tablet) */
-        .services-grid {
+
+        .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
         }
-        
-        .service-card {
-            background: white;
-            padding: 30px 20px;
+
+        .price-card {
+            background: var(--bg-deep);
+            border: 1px solid rgba(201, 162, 77, 0.3);
             border-radius: 15px;
-            border: 1px solid #eee;
+            padding: 30px;
             transition: 0.3s;
             position: relative;
             overflow: hidden;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 160px;
         }
-        .service-card:hover {
+
+        .price-card:hover {
             transform: translateY(-5px);
+            border-color: var(--gold-metal);
             box-shadow: var(--shadow);
-            border-color: var(--rose-light);
         }
-        .service-icon {
-            font-size: 1.8rem;
-            color: var(--rose-gold);
-            margin-bottom: 15px;
-        }
-        .service-card h4 {
-            font-size: 1rem;
-            color: var(--vinho-claro);
-            font-weight: 700;
+
+        .price-card h4 {
+            font-size: 1.5rem;
+            color: var(--gold-metal);
+            text-align: center;
+            margin-bottom: 25px;
             text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px dashed rgba(224, 194, 122, 0.3);
+            padding-bottom: 15px;
+        }
+
+        .price-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(237, 230, 216, 0.05);
+            font-size: 1.05rem;
+        }
+
+        .price-list li:last-child {
+            border-bottom: none;
+        }
+
+        .price-name {
+            color: var(--beige-text);
+        }
+
+        .price-value {
+            color: var(--gold-light);
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+        }
+
+        .promo-banner {
+            background: linear-gradient(135deg, var(--gold-metal) 0%, #b88f3b 100%);
+            color: var(--bg-deep);
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            font-weight: 700;
+            box-shadow: 0 5px 15px rgba(201, 162, 77, 0.2);
+        }
+        
+        .promo-banner h5 {
+            color: var(--bg-deep);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .promo-price {
+            font-size: 1.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .promo-old {
+            text-decoration: line-through;
+            font-size: 1rem;
+            opacity: 0.7;
+            margin-right: 10px;
         }
 
         /* --- LOCAIS --- */
-        .locations-section { background: #fff5f5; text-align: center; }
+        .locations-section { 
+            background: var(--bg-deep); 
+            text-align: center; 
+        }
+        
         .locations-grid {
             display: flex;
             justify-content: center;
@@ -566,42 +523,71 @@
             gap: 20px;
             margin-top: 40px;
         }
+        
         .location-box {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            width: 300px;
+            background: var(--bg-dark);
+            padding: 40px 30px;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 500px;
             transition: 0.3s;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid rgba(201, 162, 77, 0.2);
+            box-shadow: var(--shadow);
         }
+        
         .location-box:hover {
             transform: translateY(-5px);
-            border: 1px solid var(--rose-gold);
+            border-color: var(--gold-metal);
         }
+        
+        .location-box h3 {
+            margin: 15px 0 10px;
+            font-size: 1.8rem;
+        }
+
+        .location-box p {
+            color: var(--beige-text);
+            margin-bottom: 25px;
+        }
+
         .location-btn {
             display: inline-block;
-            margin-top: 15px;
-            color: var(--rose-gold);
+            background: var(--gold-metal);
+            color: var(--bg-deep);
+            padding: 10px 25px;
+            border-radius: 5px;
             font-weight: 700;
-            border-bottom: 1px solid var(--rose-gold);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+        
+        .location-btn:hover {
+            background: var(--gold-light);
+            color: var(--bg-deep);
         }
 
         /* --- INSTAGRAM SECTION --- */
         .instagram-section {
-            background-color: white;
+            background-color: var(--bg-dark);
             text-align: center;
         }
         .instagram-wrapper {
             display: flex;
             justify-content: center;
             width: 100%;
+            background: #fff; /* Fundo branco necessário para o visual padrão do embed do IG */
+            padding: 20px 0;
+            border-radius: 10px;
+            max-width: 580px;
+            margin: 0 auto;
         }
 
         /* --- FOOTER --- */
         footer {
-            background-color: #2a2a2a;
-            color: #ccc;
+            background-color: #050505;
+            color: var(--beige-text);
             padding: 60px 0 20px;
+            border-top: 2px solid var(--gold-metal);
         }
         .footer-content {
             display: flex;
@@ -610,10 +596,10 @@
             gap: 40px;
             margin-bottom: 40px;
         }
-        .footer-col h4 { color: var(--rose-gold); margin-bottom: 20px; font-size: 1.2rem; }
-        .social-icons a { color: white; font-size: 1.5rem; margin-right: 15px; transition: 0.3s; }
-        .social-icons a:hover { color: var(--rose-gold); }
-        .copyright { text-align: center; border-top: 1px solid #444; padding-top: 20px; font-size: 0.8rem; }
+        .footer-col h4 { color: var(--gold-metal); margin-bottom: 20px; font-size: 1.4rem; }
+        .social-icons a { color: var(--beige-text); font-size: 1.8rem; margin-right: 15px; transition: 0.3s; }
+        .social-icons a:hover { color: var(--gold-light); transform: scale(1.1); display: inline-block; }
+        .copyright { text-align: center; border-top: 1px solid #222; padding-top: 20px; font-size: 0.85rem; opacity: 0.7; }
 
         /* --- WHATSAPP FLOATING --- */
         .whatsapp-container {
@@ -627,13 +613,14 @@
             gap: 10px;
         }
         .whatsapp-text {
-            background-color: white;
-            color: var(--rose-gold);
+            background-color: var(--bg-dark);
+            color: var(--gold-light);
             padding: 8px 15px;
             border-radius: 20px;
             font-size: 0.9rem;
             font-weight: 700;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border: 1px solid var(--gold-metal);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
             white-space: nowrap;
             position: relative;
             opacity: 0;
@@ -647,7 +634,7 @@
             transform: translateX(-50%);
             border-width: 6px 6px 0;
             border-style: solid;
-            border-color: white transparent transparent transparent;
+            border-color: var(--gold-metal) transparent transparent transparent;
         }
         @keyframes fadeInText {
             from { opacity: 0; transform: translateY(10px); }
@@ -656,25 +643,30 @@
         .whatsapp-float {
             width: 60px;
             height: 60px;
-            background-color: #25d366;
+            background-color: var(--whatsapp);
             color: #FFF;
             border-radius: 50px;
             text-align: center;
             font-size: 30px;
-            box-shadow: 2px 2px 3px #999;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
             display: flex;
             align-items: center;
             justify-content: center;
             transition: 0.3s;
             text-decoration: none;
+            border: 2px solid transparent;
         }
-        .whatsapp-float:hover { transform: scale(1.1); background-color: #128c7e; }
+        .whatsapp-float:hover { 
+            transform: scale(1.1); 
+            background-color: var(--whatsapp-hover); 
+            border-color: #fff;
+        }
 
         /* --- RESPONSIVIDADE (MOBILE) --- */
         @media (max-width: 900px) {
-            .hero h1 { font-size: 3rem; }
-            .profile-card, .news-container { flex-direction: column; }
-            .profile-info, .profile-img-container, .news-content, .news-image { min-width: 100%; }
+            .hero h1 { font-size: 3.5rem; }
+            .profile-card { flex-direction: column; padding: 20px; }
+            .profile-info, .profile-img-container { min-width: 100%; }
         }
 
         @media (max-width: 768px) {
@@ -688,7 +680,7 @@
                 right: 0px;
                 height: 100vh;
                 top: var(--header-height);
-                background-color: white;
+                background-color: var(--bg-deep);
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -698,43 +690,20 @@
                 transform: translateX(100%);
                 transition: transform 0.4s ease-in-out;
                 padding-top: 50px;
-                border-top: 1px solid var(--rose-light);
+                border-top: 1px solid var(--gold-metal);
             }
 
-            .nav-links.active { transform: translateX(0%); box-shadow: -5px 0 15px rgba(0,0,0,0.1); }
+            .nav-links.active { transform: translateX(0%); box-shadow: -5px 0 15px rgba(0,0,0,0.5); }
             
-            /* Dropdown no mobile */
-            .dropdown-menu {
-                position: static;
-                transform: none;
-                box-shadow: none;
-                border: none;
-                background: #f9f9f9;
-                text-align: center;
-                display: none;
-                width: 100%;
-                border-radius: 0;
-            }
-            
-            .nav-links li:hover .dropdown-menu {
-                display: block;
-                opacity: 1;
-                visibility: visible;
-            }
-
             .menu-toggle { display: block; }
 
             .hero {
                 background-attachment: scroll;
-                background-position: center;
-                background-size: cover;
-                height: auto;
                 min-height: 400px;
                 padding: 50px 0;
             }
 
-            .hero h1 { font-size: 2.2rem; line-height: 1.2; }
-            .hero-subtitle-main { font-size: 1rem; }
+            .hero h1 { font-size: 2.8rem; line-height: 1.2; }
             
             .typewriter {
                 font-size: 1rem;
@@ -744,41 +713,22 @@
                 text-align: center;
                 width: 100%;
             }
-            .typewriter-container { border-bottom: 2px solid var(--rose-gold); padding-bottom: 5px; height: auto; }
+            .typewriter-container { border-bottom: 2px solid var(--gold-metal); padding-bottom: 5px; height: auto; }
 
-            .profile-img { height: 350px; object-position: top; }
-            .news-image img { height: 250px; }
+            .profile-img { height: 350px; }
 
             .whatsapp-container { bottom: 20px; right: 20px; }
             .whatsapp-text {
                 font-size: 0.75rem;
                 padding: 8px 10px;
                 white-space: normal;
-                width: 90px;
+                width: 100px;
                 text-align: center;
                 line-height: 1.2;
             }
             .whatsapp-float { width: 50px; height: 50px; font-size: 25px; }
-
-            /* --- ALTERAÇÃO SOLICITADA: PROCEDIMENTOS LADO A LADO NO MOBILE --- */
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr); /* Força 2 colunas */
-                gap: 10px; /* Reduz espaço entre eles */
-            }
             
-            .service-card {
-                padding: 15px 10px; /* Reduz padding interno */
-                min-height: 130px; /* Reduz altura mínima */
-            }
-            
-            .service-icon {
-                font-size: 1.5rem; /* Ícone menor */
-                margin-bottom: 10px;
-            }
-            
-            .service-card h4 {
-                font-size: 0.8rem; /* Fonte menor */
-            }
+            .pricing-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -789,29 +739,15 @@
         <div class="container">
             <nav>
                 <a href="#" class="logo">
-                    <!-- FOTO DA LOGO (SOMENTE IMAGEM) -->
-                    <img src="assets/logo.PNG" alt="Logo Beauty Esthetic">
-                    <!-- TEXTO RESTAURADO -->
                     <div class="logo-text-container">
-                        <span class="logo-text shimmer-text">Beauty Esthetic</span>
-                        <span class="logo-subtitle">Saúde & Bem Estar</span>
+                        <span class="logo-text shimmer-text">Studio Edy Beauty</span>
                     </div>
                 </a>
                 <ul class="nav-links">
                     <li><a href="#home">Início</a></li>
-                    <li><a href="#novidades">Novidades</a></li>
-                    
-                    <!-- MENU NOSSO TIME (DROPDOWN) -->
-                    <li>
-                        <a href="#equipe">Nosso Time <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 5px;"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#gleice">Dra. Gleice Kelly</a></li>
-                            <li><a href="#lilian">Lílian Postigo</a></li>
-                            <li><a href="#kellen">Dra. Kellen Nisnare</a></li>
-                        </ul>
-                    </li>
-                    
-                    <li><a href="#locais">Locais</a></li>
+                    <li><a href="#edi">A Profissional</a></li>
+                    <li><a href="#precos">Preços</a></li>
+                    <li><a href="#locais">Local</a></li>
                 </ul>
                 <div class="menu-toggle">
                     <i class="fas fa-bars"></i>
@@ -824,158 +760,63 @@
     <div class="fixed-marquee">
         <div class="fixed-marquee-content">
             <!-- Loop de Procedimentos -->
-            <span class="fixed-marquee-item">Harmonização Facial</span> <i class="fas fa-star fixed-marquee-separator"></i>
-            <span class="fixed-marquee-item">Botox</span> <i class="fas fa-star fixed-marquee-separator"></i>
-            <span class="fixed-marquee-item">Preenchimento Labial</span> <i class="fas fa-star fixed-marquee-separator"></i>
-            <span class="fixed-marquee-item">Otomodelação</span> <i class="fas fa-star fixed-marquee-separator"></i>
-            <span class="fixed-marquee-item">Rinomodelação</span> <i class="fas fa-star fixed-marquee-separator"></i>
-            <span class="fixed-marquee-item">Depilação a Laser</span> <i class="fas fa-star fixed-marquee-separator"></i>
-            <span class="fixed-marquee-item">Bioestimuladores</span> <i class="fas fa-star fixed-marquee-separator"></i>
-            <span class="fixed-marquee-item">EzBody Avançado</span> <i class="fas fa-star fixed-marquee-separator"></i>
-            <span class="fixed-marquee-item">Design de Sobrancelhas</span> <i class="fas fa-star fixed-marquee-separator"></i>
+            <span class="fixed-marquee-item">Atendimento feminino/masculino</span> <span class="fixed-marquee-separator">•</span>
+            <span class="fixed-marquee-item">Limpeza facial</span> <span class="fixed-marquee-separator">•</span>
+            <span class="fixed-marquee-item">Depilação</span> <span class="fixed-marquee-separator">•</span>
+            <span class="fixed-marquee-item">Massagem relaxante/modeladora</span> <span class="fixed-marquee-separator">•</span>
+            <span class="fixed-marquee-item">Drenagem</span> <span class="fixed-marquee-separator">•</span>
             
             <!-- Repetição para Loop Suave -->
-            <span class="fixed-marquee-item">Harmonização Facial</span> <i class="fas fa-star fixed-marquee-separator"></i>
-            <span class="fixed-marquee-item">Botox</span> <i class="fas fa-star fixed-marquee-separator"></i>
-            <span class="fixed-marquee-item">Preenchimento Labial</span> <i class="fas fa-star fixed-marquee-separator"></i>
-            <span class="fixed-marquee-item">Otomodelação</span> <i class="fas fa-star fixed-marquee-separator"></i>
-            <span class="fixed-marquee-item">Rinomodelação</span> <i class="fas fa-star fixed-marquee-separator"></i>
-            <span class="fixed-marquee-item">Depilação a Laser</span> <i class="fas fa-star fixed-marquee-separator"></i>
-            <span class="fixed-marquee-item">Bioestimuladores</span> <i class="fas fa-star fixed-marquee-separator"></i>
-            <span class="fixed-marquee-item">EzBody Avançado</span> <i class="fas fa-star fixed-marquee-separator"></i>
-            <span class="fixed-marquee-item">Design de Sobrancelhas</span> <i class="fas fa-star fixed-marquee-separator"></i>
+            <span class="fixed-marquee-item">Atendimento feminino/masculino</span> <span class="fixed-marquee-separator">•</span>
+            <span class="fixed-marquee-item">Limpeza facial</span> <span class="fixed-marquee-separator">•</span>
+            <span class="fixed-marquee-item">Depilação</span> <span class="fixed-marquee-separator">•</span>
+            <span class="fixed-marquee-item">Massagem relaxante/modeladora</span> <span class="fixed-marquee-separator">•</span>
+            <span class="fixed-marquee-item">Drenagem</span> <span class="fixed-marquee-separator">•</span>
         </div>
     </div>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1 class="shimmer-text">Beauty Esthetic</h1>
-            
-            <!-- SUBTÍTULO APROXIMADO -->
-            <h2 class="hero-subtitle-main">Saúde & Bem Estar</h2>
+            <h1 class="shimmer-text">Studio Edy Beauty</h1>
             
             <div class="typewriter-container">
-                <div class="typewriter">Sua beleza em primeiro lugar</div>
+                <div class="typewriter">Seu momento de auto cuidado começa aqui</div>
             </div>
             
             <br>
-            <a href="https://wa.me/5569993462725?text=Ol%C3%A1%2C%20gostaria%20saber%20mais%20sobre..." target="_blank" class="btn-gold">
+            <a href="https://wa.me/5593991863223?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20sess%C3%A3o..." target="_blank" class="btn-gold">
                 Agendar Avaliação
             </a>
         </div>
     </section>
 
-    <!-- Novidade Section (Letybo) -->
-    <section id="novidades" class="news-section reveal">
-        <div class="container">
-            <div class="news-container">
-                <div class="news-image">
-                    <img src="https://drapaulaazevedodermato.com.br/novo-2023/wp-content/uploads/2025/12/Saiba-como-a-toxina-botulinica-Letybo-atua-e-conheca-a-abordagem-cientifica-da-Dra.-Paula-Azevedo-em-Goiania.jpg" alt="Toxina Botulínica Letybo">
-                </div>
-                <div class="news-content">
-                    <span class="badge">Novidade no Consultório</span>
-                    <h2 class="shimmer-text">Toxina Botulínica Coreana Letybo</h2>
-                    <p>Acaba de chegar para elevar ainda mais o padrão dos nossos resultados 💉. A Letybo é uma toxina botulínica tipo A moderna, com alta tecnologia de purificação.</p>
-                    
-                    <ul class="features-list">
-                        <li><i class="fas fa-check-circle"></i> Resultado natural</li>
-                        <li><i class="fas fa-check-circle"></i> Início de ação rápido</li>
-                        <li><i class="fas fa-check-circle"></i> Excelente durabilidade</li>
-                        <li><i class="fas fa-check-circle"></i> Segurança e eficácia comprovadas</li>
-                    </ul>
-
-                    <p><strong>Se você deseja suavizar linhas de expressão, prevenir rugas e manter a pele jovem e descansada, essa novidade é para você!</strong></p>
-                    <br>
-                    <a href="https://wa.me/5569993462725?text=Ol%C3%A1%2C%20eu%20quero%20saber%20mais%20sobre%20a%20Letybo!" target="_blank" class="btn-gold">
-                        <i class="fab fa-whatsapp"></i> Eu quero!
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- ============================================= -->
-    <!-- PROFISSIONAL 1: DRA GLEICE -->
+    <!-- PROFISSIONAL: EDI -->
     <!-- ============================================= -->
-    <section id="gleice" class="professional-wrapper reveal">
+    <section id="edi" class="professional-wrapper reveal">
         <div class="container">
             <!-- Perfil -->
             <div class="profile-card">
                 <div class="profile-img-container">
-                    <img src="assets/gleice.png" alt="Dra Gleice Kelly" class="profile-img">
+                    <img src="assets/edi.png" alt="Edi" class="profile-img">
                 </div>
                 <div class="profile-info">
-                    <h2 class="shimmer-text">Dra. Gleice Kelly de Lima</h2>
-                    <h3>Enfermeira Esteticista</h3>
+                    <h2 class="shimmer-text">Edi</h2>
+                    <h3>Especialista em Estética & Bem-Estar</h3>
                     <div class="bio-text">
-                        <p>Responsável técnica pela Beauty Esthetic, especialista em Harmonização Facial, com atuação voltada à valorização da beleza natural, segurança e bem-estar do paciente.</p>
+                        <p>Responsável pelo Studio Edy Beauty, com foco exclusivo no seu bem-estar, relaxamento e na valorização da sua beleza autêntica.</p>
                         <br>
-                        <p>Possui sólida formação e experiência em Harmonização Facial, Otomodelação e Rinomodelação com fios definitivos, e Liposlim 4D.</p>
+                        <p>Oferecemos um atendimento acolhedor, tanto para o público feminino quanto masculino, utilizando as melhores técnicas de massagem, depilação e cuidados faciais.</p>
                     </div>
                     
                     <div class="social-buttons">
-                        <a href="https://www.instagram.com/gleicekellydelima/" target="_blank" class="btn-gold">
+                        <a href="https://www.instagram.com/studioedybeauty/" target="_blank" class="btn-gold">
                             <i class="fab fa-instagram"></i> Instagram
                         </a>
-                        <a href="https://wa.me/5569993462725?text=Ol%C3%A1%2C%20gostaria%20saber%20mais%20sobre..." target="_blank" class="btn-whatsapp-outline">
+                        <a href="https://wa.me/5593991863223?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20sess%C3%A3o..." target="_blank" class="btn-whatsapp-outline">
                             <i class="fab fa-whatsapp"></i> WhatsApp
                         </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Procedimentos da Dra Gleice -->
-            <div class="procedures-subsection">
-                <h3 class="section-subtitle">Portfólio de Procedimentos</h3>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-magic"></i></div>
-                        <h4>Harmonização Facial</h4>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-syringe"></i></div>
-                        <h4>Botox</h4>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-kiss-wink-heart"></i></div>
-                        <h4>Preenchimento Labial</h4>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-infinity"></i></div>
-                        <h4>Otomodelação</h4>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-feather-alt"></i></div>
-                        <h4>Rinomodelação com fios</h4>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-user-circle"></i></div>
-                        <h4>Contorno Mandibular Slim 4D</h4>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-bolt"></i></div>
-                        <h4>Depilação a Laser</h4>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-spa"></i></div>
-                        <h4>Estética Facial</h4>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-flask"></i></div>
-                        <h4>Bioestimulador de Colágeno</h4>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-project-diagram"></i></div>
-                        <h4>Fios de PDO</h4>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-heartbeat"></i></div>
-                        <h4>PEIM (micro varizes)</h4>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-th"></i></div>
-                        <h4>Microagulhamento</h4>
                     </div>
                 </div>
             </div>
@@ -983,164 +824,86 @@
     </section>
 
     <!-- ============================================= -->
-    <!-- PROFISSIONAL 2: LÍLIAN POSTIGO -->
+    <!-- TABELA DE PREÇOS MODERNA -->
     <!-- ============================================= -->
-    <section id="lilian" class="professional-wrapper reveal" style="background-color: #fffafb;">
+    <section id="precos" class="pricing-section reveal">
         <div class="container">
-            <!-- Perfil -->
-            <div class="profile-card">
-                <div class="profile-img-container">
-                    <img src="assets/lilian.png" alt="Lílian Postigo" class="profile-img">
+            <h2 class="section-title shimmer-text">Tabela de Preços</h2>
+            <p class="section-subtitle-center">Invista no seu bem-estar com nossos procedimentos especializados</p>
+            
+            <div class="pricing-grid">
+                
+                <!-- Card 1: Depilação -->
+                <div class="price-card">
+                    <h4><i class="fas fa-leaf" style="margin-right: 10px;"></i> Depilação</h4>
+                    <ul class="price-list">
+                        <li>
+                            <span class="price-name">Perna Inteira</span>
+                            <span class="price-value">R$ 70</span>
+                        </li>
+                        <li>
+                            <span class="price-name">Meia Perna</span>
+                            <span class="price-value">R$ 35</span>
+                        </li>
+                        <li>
+                            <span class="price-name">Axilas</span>
+                            <span class="price-value">R$ 30</span>
+                        </li>
+                        <li>
+                            <span class="price-name">Buço</span>
+                            <span class="price-value">R$ 20</span>
+                        </li>
+                        <li>
+                            <span class="price-name">Íntima Completa</span>
+                            <span class="price-value">R$ 70</span>
+                        </li>
+                    </ul>
                 </div>
-                <div class="profile-info">
-                    <h2 class="shimmer-text">Lílian Postigo</h2>
-                    <h3>Especialista em Cílios e Sobrancelhas</h3>
-                    <div class="bio-text">
-                        <p>Especialista em realçar o olhar e cuidar da sua pele com técnicas avançadas de design, micropigmentação e tratamentos corporais.</p>
-                    </div>
+
+                <!-- Card 2: Massagens e Estética -->
+                <div class="price-card">
+                    <h4><i class="fas fa-spa" style="margin-right: 10px;"></i> Massagens & Estética</h4>
+                    <ul class="price-list">
+                        <li>
+                            <span class="price-name">Massagem Modeladora</span>
+                            <span class="price-value">R$ 70</span>
+                        </li>
+                        <li>
+                            <span class="price-name">Massagem Terapêutica</span>
+                            <span class="price-value">R$ 120</span>
+                        </li>
+                        <li>
+                            <span class="price-name">Massagem Relaxante</span>
+                            <span class="price-value">R$ 120</span>
+                        </li>
+                        <li>
+                            <span class="price-name">Drenagem Linfática</span>
+                            <span class="price-value">R$ 80</span>
+                        </li>
+                        <li>
+                            <span class="price-name">Limpeza Facial</span>
+                            <span class="price-value">R$ 120</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Card 3: Cuidados Especiais e Promoções -->
+                <div class="price-card" style="border-color: var(--gold-light);">
+                    <h4><i class="fas fa-star" style="margin-right: 10px;"></i> Cuidados Especiais</h4>
+                    <ul class="price-list">
+                        <li>
+                            <span class="price-name">Extração de acnes (Costas)</span>
+                            <span class="price-value">R$ 120</span>
+                        </li>
+                    </ul>
                     
-                    <div class="social-buttons">
-                        <a href="https://www.instagram.com/lilianpostigoesthetic/" target="_blank" class="btn-gold">
-                            <i class="fab fa-instagram"></i> Instagram
-                        </a>
-                        <a href="https://wa.me/5593984081928?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre..." target="_blank" class="btn-whatsapp-outline">
-                            <i class="fab fa-whatsapp"></i> WhatsApp
-                        </a>
+                    <div class="promo-banner">
+                        <h5>Promoção Método Modela+</h5>
+                        <p style="font-size: 0.9rem; margin-bottom: 5px;">Pacote com 5 sessões</p>
+                        <span class="promo-old">R$ 400</span> <span class="promo-price">R$ 300</span>
                     </div>
                 </div>
-            </div>
 
-            <!-- Procedimentos da Lílian -->
-            <div class="procedures-subsection">
-                <h3 class="section-subtitle">Portfólio de Procedimentos</h3>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-eye"></i></div>
-                        <h4>Design de sobrancelhas</h4>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-check-double"></i></div>
-                        <h4>Brow Lamination</h4>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-eye"></i></div>
-                        <h4>Lash Lifting</h4>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
-                        <h4>Micropigmentação labial</h4>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-leaf"></i></div>
-                        <h4>Limpeza de Pele</h4>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-soap"></i></div>
-                        <h4>Dermaplaning</h4>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-star"></i></div>
-                        <h4>Peeling de Hollywood</h4>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-eraser"></i></div>
-                        <h4>Remoção a laser</h4>
-                        <small>(Micro e Tatuagem)</small>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-burn"></i></div>
-                        <h4>Detox corporal 3k</h4>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-hand-sparkles"></i></div>
-                        <h4>Massagem modeladora</h4>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-wave-square"></i></div>
-                        <h4>Hidrolipolise ultrassônica</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================= -->
-    <!-- PROFISSIONAL 3: DRA KELLEN NISNARE -->
-    <!-- ============================================= -->
-    <section id="kellen" class="professional-wrapper reveal">
-        <div class="container">
-            <!-- Perfil -->
-            <div class="profile-card">
-                <div class="profile-img-container">
-                    <img src="assets/ketlen.png" alt="Dra Kellen Nisnare" class="profile-img">
-                </div>
-                <div class="profile-info">
-                    <h2 class="shimmer-text">Dra. Kellen Nisnare</h2>
-                    <h3>Enfermeira Esteta</h3>
-                    <div class="bio-text">
-                        <p>Focada em procedimentos corporais avançados e estética facial, proporcionando resultados que elevam a autoestima.</p>
-                    </div>
-                    
-                    <div class="social-buttons">
-                        <a href="https://www.instagram.com/ketlen_nisnare/" target="_blank" class="btn-gold">
-                            <i class="fab fa-instagram"></i> Instagram
-                        </a>
-                        <a href="https://wa.me/5593984020627?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre..." target="_blank" class="btn-whatsapp-outline">
-                            <i class="fab fa-whatsapp"></i> WhatsApp
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Procedimentos da Dra Kellen -->
-            <div class="procedures-subsection">
-                <h3 class="section-subtitle">Portfólio de Procedimentos</h3>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-heartbeat"></i></div>
-                        <h4>EzBody Avançado</h4>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-pen-nib"></i></div>
-                        <h4>Tatuagem Profissional</h4>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-eye"></i></div>
-                        <h4>Extensão de Cílios</h4>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-ring"></i></div>
-                        <h4>Piercing Humanizado</h4>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-feather"></i></div>
-                        <h4>Epilação com Cera</h4>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-tint"></i></div>
-                        <h4>Hydra Gloss</h4>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-minus-circle"></i></div>
-                        <h4>Cauterização de Verrugas</h4>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-leaf"></i></div>
-                        <h4>Limpeza de Pele Profunda</h4>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
-                        <h4>Micropigmentação Labial</h4>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-bold"></i></div>
-                        <h4>Tratamento Fort Brows</h4>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-pencil-alt"></i></div>
-                        <h4>Design de Sobrancelha</h4>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -1149,31 +912,15 @@
     <section id="locais" class="locations-section reveal">
         <div class="container">
             <h2 class="section-title shimmer-text">Onde Estamos</h2>
-            <p>Atendimentos especializados nas seguintes regiões:</p>
+            <p class="section-subtitle-center">Venha nos visitar em nosso espaço de atendimento</p>
             
             <div class="locations-grid">
-                <!-- Apuí -->
+                <!-- Local Único Atualizado -->
                 <div class="location-box">
-                    <i class="fas fa-map-marker-alt" style="font-size: 2rem; color: var(--rose-gold); margin-bottom: 10px;"></i>
-                    <h3>Apuí - AM</h3>
-                    <p>Consultório especializado</p>
-                    <a href="https://maps.app.goo.gl/ugc6KEY5NBerg31Z7" target="_blank" class="location-btn">Ver no Mapa</a>
-                </div>
-
-                <!-- Jacareacanga -->
-                <div class="location-box">
-                    <i class="fas fa-map-marker-alt" style="font-size: 2rem; color: var(--rose-gold); margin-bottom: 10px;"></i>
-                    <h3>Jacareacanga - PA</h3>
-                    <p>Atendimento exclusivo</p>
-                    <a href="https://maps.app.goo.gl/5Xe5JRamFosU61oFA" target="_blank" class="location-btn">Ver no Mapa</a>
-                </div>
-
-                <!-- Fortaleza -->
-                <div class="location-box">
-                    <i class="fas fa-map-marker-alt" style="font-size: 2rem; color: var(--rose-gold); margin-bottom: 10px;"></i>
-                    <h3>Fortaleza - CE</h3>
-                    <p>Unidade de atendimento</p>
-                    <a href="https://maps.app.goo.gl/RAHwDtGKpvf7F6Gs7" target="_blank" class="location-btn">Ver no Mapa</a>
+                    <i class="fas fa-map-marker-alt" style="font-size: 2.5rem; color: var(--gold-metal); margin-bottom: 15px;"></i>
+                    <h3>Studio Edy Beauty</h3>
+                    <p>Um ambiente preparado para o seu conforto e relaxamento.</p>
+                    <a href="https://maps.app.goo.gl/W6aKBGLdvm4YC3XHA" target="_blank" class="location-btn"><i class="fas fa-directions"></i> Ver no Mapa</a>
                 </div>
             </div>
         </div>
@@ -1184,12 +931,12 @@
     <!-- ============================================= -->
     <section id="instagram" class="instagram-section reveal">
         <div class="container">
-            <h2 class="section-title shimmer-text" style="margin-bottom: 20px;">Acompanhe nosso Instagram</h2>
+            <h2 class="section-title shimmer-text" style="margin-bottom: 30px;">Acompanhe nosso Instagram</h2>
             <div class="instagram-wrapper">
-                <!-- Instagram Embed -->
+                <!-- Instagram Embed Atualizado -->
                 <blockquote 
                   class="instagram-media" 
-                  data-instgrm-permalink="https://www.instagram.com/beauty_.esthetic/" 
+                  data-instgrm-permalink="https://www.instagram.com/studioedybeauty/" 
                   data-instgrm-version="14"
                   style="margin: 0 auto; max-width: 540px; width: 100%; border: none;">
                 </blockquote>
@@ -1201,21 +948,21 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-col" style="max-width: 300px;">
-                    <h4>Beauty Esthetic</h4>
-                    <p>Sua referência em harmonização facial e estética avançada. Protocolos seguros e resultados naturais.</p>
+                <div class="footer-col" style="max-width: 350px;">
+                    <h4>Studio Edy Beauty</h4>
+                    <p>Seu momento de auto cuidado começa aqui. Atendimento especializado focado na sua saúde, estética e bem-estar.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Contato</h4>
-                    <p><i class="fab fa-whatsapp"></i> Agendamentos via WhatsApp</p>
+                    <p><i class="fab fa-whatsapp" style="color: var(--whatsapp); margin-right: 5px;"></i> Agendamentos via WhatsApp</p>
                     <div class="social-icons" style="margin-top: 15px;">
-                        <a href="https://www.instagram.com/beauty_.esthetic/" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/5569993462725?text=Ol%C3%A1%2C%20gostaria%20saber%20mais%20sobre..." target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/studioedybeauty/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/5593991863223?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20sess%C3%A3o..." target="_blank"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2024 Beauty Esthetic. Todos os direitos reservados.</p>
+                <p>&copy; 2024 Studio Edy Beauty. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
@@ -1223,7 +970,7 @@
     <!-- Botão WhatsApp Flutuante com Container e Texto -->
     <div class="whatsapp-container">
         <span class="whatsapp-text">Agende sua avaliação</span>
-        <a href="https://wa.me/5569993462725?text=Ol%C3%A1%2C%20gostaria%20saber%20mais%20sobre..." class="whatsapp-float" target="_blank">
+        <a href="https://wa.me/5593991863223?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20sess%C3%A3o..." class="whatsapp-float" target="_blank">
             <i class="fab fa-whatsapp"></i>
         </a>
     </div>
@@ -1242,8 +989,8 @@
             navLinks.classList.toggle('active');
         });
 
-        // Fechar menu ao clicar em um link (exceto se for dropdown)
-        document.querySelectorAll('.nav-links li a:not([href="#equipe"])').forEach(link => {
+        // Fechar menu ao clicar em um link
+        document.querySelectorAll('.nav-links li a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
             });
