@@ -46,7 +46,8 @@
             background-color: var(--bg-deep);
             overflow-x: hidden;
             line-height: 1.6;
-            padding-top: calc(var(--header-height) + var(--marquee-height));
+            padding-top: var(--header-height);
+            padding-bottom: var(--marquee-height);
         }
 
         h1, h2, h3, h4 {
@@ -233,21 +234,23 @@
             cursor: pointer;
         }
 
-        /* --- MARQUEE FIXO (TOPO) --- */
+        /* --- MARQUEE FIXO (BOTTOM) --- */
         .fixed-marquee {
             position: fixed;
-            top: var(--header-height);
+            bottom: 0;
             left: 0;
             width: 100%;
             height: var(--marquee-height);
-            background: var(--gold-metal);
-            color: var(--bg-deep);
+            background: rgba(11, 11, 11, 0.7);
+            backdrop-filter: blur(8px);
+            border-top: 1px solid rgba(201, 162, 77, 0.2);
+            color: var(--gold-light);
             z-index: 999;
             display: flex;
             align-items: center;
             overflow: hidden;
             white-space: nowrap;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.5);
         }
 
         .fixed-marquee-content {
@@ -269,7 +272,7 @@
             opacity: 0.7;
             vertical-align: middle;
             margin: 0 5px;
-            color: var(--bg-dark);
+            color: var(--beige-text);
         }
 
         @keyframes scroll {
@@ -745,7 +748,7 @@
                 </a>
                 <ul class="nav-links">
                     <li><a href="#home">Início</a></li>
-                    <li><a href="#edi">A Profissional</a></li>
+                    <li><a href="#edi">PROFISSIONAL</a></li>
                     <li><a href="#precos">Preços</a></li>
                     <li><a href="#locais">Local</a></li>
                 </ul>
@@ -756,7 +759,7 @@
         </div>
     </header>
 
-    <!-- MARQUEE FIXO NO TOPO (Abaixo do Header) -->
+    <!-- MARQUEE FIXO (Abaixo do Header) -->
     <div class="fixed-marquee">
         <div class="fixed-marquee-content">
             <!-- Loop de Procedimentos -->
@@ -799,15 +802,23 @@
             <!-- Perfil -->
             <div class="profile-card">
                 <div class="profile-img-container">
-                    <img src="assets/edi.png" alt="Edi" class="profile-img">
+                    <img src="assets/edi.png" alt="Edifatima Strack" class="profile-img">
                 </div>
                 <div class="profile-info">
-                    <h2 class="shimmer-text">Edi</h2>
+                    <h2 class="shimmer-text">Edifatima Strack</h2>
                     <h3>Especialista em Estética & Bem-Estar</h3>
                     <div class="bio-text">
                         <p>Responsável pelo Studio Edy Beauty, com foco exclusivo no seu bem-estar, relaxamento e na valorização da sua beleza autêntica.</p>
                         <br>
                         <p>Oferecemos um atendimento acolhedor, tanto para o público feminino quanto masculino, utilizando as melhores técnicas de massagem, depilação e cuidados faciais.</p>
+                        <br>
+                        <h4 style="color: var(--gold-metal); margin-bottom: 15px; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px dashed rgba(201, 162, 77, 0.3); padding-bottom: 5px;">Formação & Experiência</h4>
+                        <ul style="list-style: none; padding-left: 0;">
+                            <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--gold-light); margin-right: 10px; font-size: 0.85rem;"></i> Graduação em Estética e Cosmética (2018)</li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--gold-light); margin-right: 10px; font-size: 0.85rem;"></i> Especialização em Drenagem Linfática Avançada</li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--gold-light); margin-right: 10px; font-size: 0.85rem;"></i> Formação Internacional em Terapias Manuais</li>
+                            <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--gold-light); margin-right: 10px; font-size: 0.85rem;"></i> Mais de 8 anos de experiência no mercado de beleza</li>
+                        </ul>
                     </div>
                     
                     <div class="social-buttons">
