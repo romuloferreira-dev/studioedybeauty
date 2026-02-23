@@ -1022,11 +1022,23 @@
     <script async src="https://www.instagram.com/embed.js"></script>
 
     <script>
+        // Limpa a âncora da URL ao abrir/recarregar (evita ir direto para #precos)
+        if (window.location.hash) {
+            window.history.replaceState('', document.title, window.location.pathname + window.location.search);
+        }
+
         // Garante que o navegador inicie no topo em vez de puxar do cache
         if ('scrollRestoration' in history) {
             history.scrollRestoration = 'manual';
         }
         window.scrollTo(0, 0);
+
+        // Força o topo novamente após carregar tudo (evita que o widget do Instagram puxe a tela no mobile)
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                window.scrollTo(0, 0);
+            }, 150);
+        });
 
         // Menu Mobile Toggle
         const menuToggle = document.querySelector('.menu-toggle');
